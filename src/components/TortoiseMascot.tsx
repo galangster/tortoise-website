@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
-type MascotMood = 'happy' | 'cheering' | 'running' | 'celebrating'
+type MascotMood = 'happy' | 'cheering' | 'running' | 'celebrating' | 'thinking' | 'resting'
 
 interface TortoiseMascotProps {
   mood?: MascotMood
@@ -35,6 +35,18 @@ const moodConfig = {
     shadow: 'shadow-tortoise-xp/30',
     emoji: '🎉',
     message: 'Outstanding work!',
+  },
+  thinking: {
+    bg: 'bg-tortoise-sky',
+    shadow: 'shadow-tortoise-sky/30',
+    emoji: '🤔',
+    message: 'Let me think...',
+  },
+  resting: {
+    bg: 'bg-tortoise-purple',
+    shadow: 'shadow-tortoise-purple/30',
+    emoji: '😌',
+    message: 'Rest day!',
   },
 }
 
