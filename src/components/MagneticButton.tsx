@@ -1,7 +1,7 @@
 'use client'
 
-import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useRef } from 'react'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 interface MagneticButtonProps {
   children: React.ReactNode
@@ -9,11 +9,7 @@ interface MagneticButtonProps {
   strength?: number
 }
 
-export function MagneticButton({ 
-  children, 
-  className = '', 
-  strength = 0.3 
-}: MagneticButtonProps) {
+export function MagneticButton({ children, className = '', strength = 0.3 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)

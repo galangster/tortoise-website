@@ -1,8 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+import { useState, useEffect } from 'react'
 
 interface TextScrambleProps {
   text: string
@@ -10,10 +8,11 @@ interface TextScrambleProps {
   duration?: number
 }
 
-export function TextScramble({ text, className = '', duration = 2000 }: TextScrambleProps) {
+export function TextScramble({ text, className = '', duration = 1500 }: TextScrambleProps) {
   const [displayText, setDisplayText] = useState(text)
   const [hasAnimated, setHasAnimated] = useState(false)
-
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  
   useEffect(() => {
     if (hasAnimated) return
     
@@ -27,9 +26,7 @@ export function TextScramble({ text, className = '', duration = 2000 }: TextScra
           .split('')
           .map((char, index) => {
             if (char === ' ') return ' '
-            if (index < iteration / 3) {
-              return text[index]
-            }
+            if (index < iteration / 3) return text[index]
             return chars[Math.floor(Math.random() * chars.length)]
           })
           .join('')
@@ -46,6 +43,6 @@ export function TextScramble({ text, className = '', duration = 2000 }: TextScra
 
     return () => clearInterval(intervalId)
   }, [text, duration, hasAnimated])
-
+  
   return <span className={className}>{displayText}</span>
 }
