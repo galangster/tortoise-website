@@ -7,6 +7,7 @@ import { Play, Trophy, Flame, Star } from 'lucide-react'
 export function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      <AuroraBackground />
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -43,7 +44,9 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               Run Your First<br />
-              <span className="gradient-text">Marathon</span>
+              <span className="gradient-text">
+                <TextScramble text="Marathon" duration={1500} />
+              </span>
             </motion.h1>
 
             <motion.p
@@ -62,14 +65,18 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <button className="btn-primary text-lg flex items-center justify-center gap-2">
-                <Play className="w-5 h-5" />
-                Start Running
-              </button>
+              <MagneticButton strength={0.2}>
+                <button className="btn-primary text-lg flex items-center justify-center gap-2">
+                  <Play className="w-5 h-5" />
+                  Start Running
+                </button>
+              </MagneticButton>
               
-              <button className="btn-secondary text-lg">
-                See How It Works
-              </button>
+              <MagneticButton strength={0.2}>
+                <button className="btn-secondary text-lg">
+                  See How It Works
+                </button>
+              </MagneticButton>
             </motion.div>
 
             {/* Stats */}
