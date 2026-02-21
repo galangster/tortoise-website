@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-rounded: 'Nunito', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-rounded);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-tortoise-primary text-white font-bold py-4 px-8 rounded-2xl 
+           border-b-4 border-tortoise-primary-dark 
+           active:border-b-0 active:translate-y-1
+           transition-all duration-150
+           shadow-lg shadow-tortoise-primary/30
+           hover:shadow-xl hover:shadow-tortoise-primary/40;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-tortoise-primary font-bold py-4 px-8 rounded-2xl 
+           border-2 border-tortoise-primary
+           active:scale-95
+           transition-all duration-150;
+  }
+
+  .card {
+    @apply bg-card-light rounded-3xl p-6 shadow-lg border-2 border-gray-100
+           hover:shadow-xl hover:border-tortoise-primary/20
+           transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-tortoise-primary via-tortoise-shell to-tortoise-trail
+           bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
