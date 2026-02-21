@@ -23,8 +23,8 @@ const features = [
   },
   {
     icon: Zap,
-    title: 'Duolingo-Style Gamification',
-    description: 'Streaks, XP, leagues, and daily quests make every run feel rewarding. Build habits that stick.',
+    title: 'Fun Progress Tracking',
+    description: 'Streaks, achievements, and daily goals make every run feel rewarding. Build habits that stick.',
     color: 'bg-tortoise-xp',
     mascot: 'celebrating' as const,
   },
@@ -37,8 +37,8 @@ const features = [
   },
   {
     icon: Users,
-    title: 'Effort-Normalized Social',
-    description: 'Compete in leagues with runners at your level. A 12-min/mile effort scores the same as 7-min/mile.',
+    title: 'Train With Friends',
+    description: 'Run with friends and compete fairly. A 12-min/mile effort scores the same as 7-min/mile for everyone.',
     color: 'bg-tortoise-purple',
     mascot: 'cheering' as const,
   },
@@ -52,7 +52,7 @@ const features = [
   {
     icon: Trophy,
     title: 'Marathon Journey Map',
-    description: 'Visualize your path from couch to marathon. Unlock milestones, earn badges, celebrate progress.',
+    description: 'Visualize your path from start to marathon finish. Unlock milestones and celebrate progress.',
     color: 'bg-tortoise-shell',
     mascot: 'celebrating' as const,
   },
@@ -79,8 +79,8 @@ export function Features() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            We combined the best of running science with game design to create 
-            the most addictive way to become a runner.
+            We combined running science with smart design to create 
+            the most effective way to become a runner.
           </motion.p>
         </div>
 

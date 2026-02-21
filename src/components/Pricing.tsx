@@ -14,43 +14,28 @@ const plans = [
       'Basic training plans',
       'Daily streak tracking',
       'Knowledge hub access',
-      'Community leagues',
+      'Community access',
     ],
     cta: 'Get Started',
     popular: false,
   },
   {
     name: 'Tortoise Pro',
-    price: '$9.99',
+    price: '$6',
     period: '/month',
     description: 'Everything you need to finish',
+    annualPrice: '$30/year',
     features: [
       'AI adaptive training',
       'Advanced analytics',
       'All knowledge modules',
-      'Friend quests & challenges',
+      'Friend challenges',
       'Streak freezes',
       'Custom workout builder',
       'Priority support',
     ],
     cta: 'Start Free Trial',
     popular: true,
-  },
-  {
-    name: 'Elite',
-    price: '$19.99',
-    period: '/month',
-    description: 'For serious runners',
-    features: [
-      'Everything in Pro',
-      '1-on-1 coach chat',
-      'Race day strategy',
-      'Advanced form analysis',
-      'Custom nutrition plans',
-      'Exclusive elite leagues',
-    ],
-    cta: 'Go Elite',
-    popular: false,
   },
 ]
 
@@ -109,6 +94,12 @@ export function Pricing() {
                   <span className="text-5xl font-black text-gray-900">{plan.price}</span>
                   <span className="text-gray-500">{plan.period}</span>
                 </div>
+                
+                {plan.annualPrice && (
+                  <p className="text-tortoise-primary font-bold text-sm mt-1">
+                    or {plan.annualPrice} annually
+                  </p>
+                )}
                 
                 <p className="text-gray-600 mt-2">{plan.description}</p>
               </div>

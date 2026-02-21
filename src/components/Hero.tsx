@@ -32,7 +32,7 @@ export function Hero() {
             >
               <div className="inline-flex items-center gap-2 bg-tortoise-primary/10 text-tortoise-primary-dark px-4 py-2 rounded-full font-bold text-sm mb-6">
                 <Star className="w-4 h-4 fill-tortoise-xp text-tortoise-xp" />
-                Duolingo for Running
+                Super Personalized Marathon Training
               </div>
             </motion.div>
 
@@ -42,8 +42,8 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Marathon Training<br />
-              <span className="gradient-text">That Feels Like a Game</span>
+              Run Your First<br />
+              <span className="gradient-text">Marathon</span>
             </motion.h1>
 
             <motion.p
@@ -52,8 +52,8 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              The first running app that makes you <strong className="text-tortoise-primary">addicted to becoming a runner</strong>. 
-              AI-powered coaching meets Duolingo-style gamification.
+              Marathon training that is <strong className="text-tortoise-primary">super personalized for you</strong>, 
+              fun, and meant to be done with other people. Train with friends and reach your goals together.
             </motion.p>
 
             <motion.div
@@ -64,7 +64,7 @@ export function Hero() {
             >
               <button className="btn-primary text-lg flex items-center justify-center gap-2">
                 <Play className="w-5 h-5" />
-                Start Your Journey
+                Start Running
               </button>
               
               <button className="btn-secondary text-lg">

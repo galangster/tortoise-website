@@ -9,8 +9,6 @@ const navLinks = [
   { href: '/#features', label: 'Features' },
   { href: '/#how-it-works', label: 'How it Works' },
   { href: '/#pricing', label: 'Pricing' },
-  { href: '/privacy', label: 'Privacy' },
-  { href: '/terms', label: 'Terms' },
 ]
 
 export function Navigation() {
@@ -39,7 +37,7 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <button className="btn-primary">
+            <button className="btn-primary py-3">
               Get Started
             </button>
           </div>
@@ -78,7 +76,7 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <button className="w-full btn-primary mt-4">
+              <button className="w-full btn-primary py-3 mt-4">
                 Get Started
               </button>
             </div>

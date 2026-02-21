@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { TortoiseMascot } from './TortoiseMascot'
-import { Apple, Play } from 'lucide-react'
+import { Apple } from 'lucide-react'
 
 export function CTABanner() {
   return (
@@ -61,18 +61,10 @@ export function CTABanner() {
               <div className="text-lg leading-none">App Store</div>
             </div>
           </button>
-
-          <button className="bg-white text-gray-900 font-bold py-4 px-8 rounded-2xl flex items-center gap-3 hover:bg-gray-100 transition-colors shadow-xl">
-            <Play className="w-6 h-6" />
-            <div className="text-left">
-              <div className="text-xs opacity-70">Get it on</div>
-              <div className="text-lg leading-none">Google Play</div>
-            </div>
-          </button>
         </motion.div>
 
         <p className="text-white/70 mt-6 text-sm">
-          Free to download. Premium features available.
+          Free to download. Premium features available. iOS only.
         </p>
       </div>
     </section>

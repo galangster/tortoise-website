@@ -7,7 +7,7 @@ const steps = [
   {
     step: '01',
     title: 'Set Your Goal',
-    description: 'Tell us your experience level and target race. Couch to 5K? Half marathon? Full marathon? We\'ve got you.',
+    description: 'Tell us your experience level and target race. First 5K? Half marathon? Full marathon? We have got you.',
     mascot: 'thinking' as const,
   },
   {
@@ -19,13 +19,13 @@ const steps = [
   {
     step: '03',
     title: 'Run & Learn',
-    description: 'Complete workouts, earn XP, and unlock bite-sized running knowledge. Every day counts.',
+    description: 'Complete workouts, unlock achievements, and learn running skills. Every day counts.',
     mascot: 'running' as const,
   },
   {
     step: '04',
-    title: 'Level Up',
-    description: 'Join leagues, compete with friends, and celebrate milestones. Slow and steady wins the race.',
+    title: 'Train Together',
+    description: 'Run with friends and celebrate milestones together. Slow and steady wins the race.',
     mascot: 'celebrating' as const,
   },
 ]
@@ -51,7 +51,7 @@ export function HowItWorks() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            From your first step to the finish line, we\'re with you every mile.
+            From your first step to the finish line, we are with you every mile.
           </motion.p>
         </div>
 
