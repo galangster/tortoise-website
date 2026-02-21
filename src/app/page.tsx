@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Navigation } from './components/Navigation'
-import { Hero } from './components/Hero'
-import { SocialProof } from './components/SocialProof'
-import { Features } from './components/Features'
-import { HowItWorks } from './components/HowItWorks'
-import { Pricing } from './components/Pricing'
-import { FAQ } from './components/FAQ'
-import { CTABanner } from './components/CTABanner'
-import { Footer } from './components/Footer'
+import { Navigation } from '@/components/Navigation'
+import { Hero } from '@/components/Hero'
+import { SocialProof } from '@/components/SocialProof'
+import { Features } from '@/components/Features'
+import { HowItWorks } from '@/components/HowItWorks'
+import { Pricing } from '@/components/Pricing'
+import { FAQ } from '@/components/FAQ'
+import { CTABanner } from '@/components/CTABanner'
+import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Tortoise - Marathon Training That Feels Like a Game',
