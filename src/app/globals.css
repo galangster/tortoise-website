@@ -19,7 +19,7 @@ body {
            active:border-b-0 active:translate-y-1
            transition-all duration-150
            shadow-lg shadow-tortoise-primary/30
-           hover:shadow-xl hover:shadow-tortoise-primary/40;
+           hover:shadow-xl hover:shadow-tortoise-primary/40 hover:scale-[1.01];
   }
 
   .btn-secondary {
@@ -31,7 +31,7 @@ body {
 
   .card {
     @apply bg-card-light rounded-3xl p-6 shadow-lg border-2 border-gray-100
-           hover:shadow-xl hover:border-tortoise-primary/20
+           hover:shadow-xl hover:border-tortoise-primary/30 hover:-translate-y-0.5
            transition-all duration-300;
   }
 

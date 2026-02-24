@@ -1,0 +1,12 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="1600" fill="#FFF8EE"/>
+<rect x="48" y="70" width="804" height="130" rx="28" fill="#FF9600"/>
+<text x="88" y="145" fill="white" font-size="44" font-family="Arial" font-weight="700">Milestone Unlocked</text>
+<circle cx="450" cy="450" r="170" fill="#FFD89A"/>
+<text x="320" y="470" fill="#7C2D12" font-size="50" font-family="Arial" font-weight="800">10 MI</text>
+<text x="295" y="530" fill="#9A3412" font-size="28" font-family="Arial">Longest run completed</text>
+<rect x="48" y="700" width="804" height="150" rx="26" fill="white" stroke="#F0DBC2"/>
+<text x="88" y="790" fill="#111827" font-size="36" font-family="Arial" font-weight="700">+320 XP</text>
+<rect x="48" y="900" width="804" height="560" rx="32" fill="white" stroke="#F0DBC2"/>
+<text x="88" y="990" fill="#6B7280" font-size="28" font-family="Arial">Next quest: Recovery 3 miles tomorrow</text>
+</svg>

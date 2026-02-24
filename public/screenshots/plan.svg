@@ -1,0 +1,13 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="1600" fill="#F4FAFF"/>
+<rect x="48" y="70" width="804" height="130" rx="28" fill="#1CB0F6"/>
+<text x="88" y="145" fill="white" font-size="44" font-family="Arial" font-weight="700">Weekly Plan</text>
+<rect x="48" y="250" width="804" height="260" rx="28" fill="white" stroke="#D9E8F2"/>
+<text x="88" y="330" fill="#111827" font-size="34" font-family="Arial" font-weight="700">Mon - Easy 4 mi</text>
+<text x="88" y="390" fill="#111827" font-size="34" font-family="Arial" font-weight="700">Wed - Tempo 5 mi</text>
+<text x="88" y="450" fill="#111827" font-size="34" font-family="Arial" font-weight="700">Sat - Long run 10 mi</text>
+<rect x="48" y="560" width="804" height="120" rx="24" fill="#EAF7FF"/>
+<text x="88" y="635" fill="#0369A1" font-size="34" font-family="Arial" font-weight="700">Adjusted for your busy Thursday</text>
+<rect x="48" y="730" width="804" height="730" rx="32" fill="white" stroke="#D9E8F2"/>
+<text x="88" y="810" fill="#111827" font-size="34" font-family="Arial" font-weight="700">Readiness: 78%</text>
+</svg>

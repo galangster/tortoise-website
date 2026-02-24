@@ -27,7 +27,12 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-2 text-xs font-black px-3 py-2 rounded-full bg-gray-100 border border-gray-200 text-gray-700">
+              <span>🔥 12 day streak</span>
+              <span className="text-gray-300">|</span>
+              <span>⚡ 1,240 XP</span>
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}

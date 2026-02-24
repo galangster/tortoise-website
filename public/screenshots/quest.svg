@@ -1,0 +1,13 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="1600" fill="#F6FFF0"/>
+<rect x="48" y="70" width="804" height="130" rx="28" fill="#58CC02"/>
+<text x="88" y="145" fill="white" font-size="44" font-family="Arial" font-weight="700">Daily Quest</text>
+<rect x="48" y="250" width="804" height="220" rx="28" fill="white" stroke="#DDE7D5"/>
+<text x="88" y="330" fill="#1A1A1A" font-size="38" font-family="Arial" font-weight="700">Easy 4 mi recovery run</text>
+<text x="88" y="390" fill="#6B7280" font-size="28" font-family="Arial">Target pace: conversational</text>
+<rect x="48" y="520" width="804" height="120" rx="24" fill="#FFC800"/>
+<text x="88" y="595" fill="#1A1A1A" font-size="36" font-family="Arial" font-weight="700">+120 XP when completed</text>
+<rect x="48" y="700" width="804" height="760" rx="32" fill="white" stroke="#DDE7D5"/>
+<text x="88" y="790" fill="#111827" font-size="34" font-family="Arial" font-weight="700">Coach Tip</text>
+<text x="88" y="845" fill="#6B7280" font-size="28" font-family="Arial">Keep effort easy so tomorrow's workout stays sharp.</text>
+</svg>

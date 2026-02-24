@@ -3,9 +3,16 @@ import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/Hero'
 import { Features } from '@/components/Features'
 import { HowItWorks } from '@/components/HowItWorks'
+import { RaceTimeline } from '@/components/RaceTimeline'
+import { StreakXpStrip } from '@/components/StreakXpStrip'
+import { AppScreensCarousel } from '@/components/AppScreensCarousel'
+import { ComparisonSection } from '@/components/ComparisonSection'
+import { RunnerStory } from '@/components/RunnerStory'
 import { Pricing } from '@/components/Pricing'
 import { FAQ } from '@/components/FAQ'
 import { CTABanner } from '@/components/CTABanner'
+import { SocialProof } from '@/components/SocialProof'
+import { StickyMobileCTA } from '@/components/StickyMobileCTA'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -25,12 +32,19 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
+        <StreakXpStrip />
         <Features />
         <HowItWorks />
+        <RaceTimeline />
+        <AppScreensCarousel />
+        <ComparisonSection />
+        <RunnerStory />
         <Pricing />
+        <SocialProof />
         <FAQ />
         <CTABanner />
       </main>
+      <StickyMobileCTA />
       <Footer />
     </>
   )

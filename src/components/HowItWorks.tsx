@@ -1,38 +1,38 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { TortoiseBubble } from './TortoiseMascot'
+import { Flag, CalendarDays, RefreshCw, PartyPopper } from 'lucide-react'
 
 const steps = [
   {
     step: '01',
-    title: 'Set Race Day',
-    description: 'Choose your event date and goal (5K, half, or marathon). That date becomes your north star.',
-    mascot: 'thinking' as const,
+    title: 'Pick Your Race',
+    description: 'Choose your target race and date. This anchors your full training timeline.',
+    icon: Flag,
   },
   {
     step: '02',
-    title: 'Plan Backwards',
-    description: 'Tortoise builds a week-by-week plan backwards from race day based on your current fitness.',
-    mascot: 'happy' as const,
+    title: 'Plan Builds Backwards',
+    description: 'Tortoise maps the exact progression from today to race day.',
+    icon: CalendarDays,
   },
   {
     step: '03',
-    title: 'Train, Adapt, Repeat',
-    description: 'Miss a workout or crush a session? The AI updates your plan so progress never stalls.',
-    mascot: 'running' as const,
+    title: 'AI Adapts Daily',
+    description: 'Busy week? Missed run? Great session? The plan adjusts without losing momentum.',
+    icon: RefreshCw,
   },
   {
     step: '04',
-    title: 'Celebrate the Finish',
-    description: 'Stay consistent with streaks, friends, and milestones—then show up ready on race day.',
-    mascot: 'celebrating' as const,
+    title: 'Show Up Ready',
+    description: 'Hit race day with confidence from consistent, structured prep.',
+    icon: PartyPopper,
   },
 ]
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20">
+    <section id="how-it-works" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -41,9 +41,8 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            How It Works
+            Your Race-Day Workflow
           </motion.h2>
-          
           <motion.p
             className="text-xl text-gray-600 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -51,34 +50,26 @@ export function HowItWorks() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-From race date selection to finish-line confidence, every step has a purpose.
+            Not generic plans. A clean sequence from target date to finish-line execution.
           </motion.p>
         </div>
 
-        <div className="space-y-8">
-          {steps.map((item, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {steps.map((item, idx) => (
             <motion.div
-              key={index}
-              className="flex flex-col md:flex-row items-center gap-8"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={item.step}
+              className="rounded-2xl border border-gray-200 bg-gray-50 p-5"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
+              transition={{ delay: idx * 0.08 }}
             >
-              <div className={`flex-1 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                <TortoiseBubble mood={item.mascot}>
-                  <span className="text-tortoise-primary text-sm font-black block mb-1">
-                    Step {item.step}
-                  </span>
-                  {item.title}
-                </TortoiseBubble>
+              <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center mb-4">
+                <item.icon className="w-5 h-5 text-tortoise-primary" />
               </div>
-              
-              <div className={`flex-1 ${index % 2 === 1 ? 'md:order-1 md:text-right' : ''}`}>
-                <p className="text-lg text-gray-600">
-                  {item.description}
-                </p>
-              </div>
+              <p className="text-xs font-black text-gray-400 mb-1">STEP {item.step}</p>
+              <h3 className="font-black text-xl text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-600">{item.description}</p>
             </motion.div>
           ))}
         </div>
