@@ -6,6 +6,7 @@ import { HowItWorks } from '@/components/HowItWorks'
 import { Pricing } from '@/components/Pricing'
 import { FAQ } from '@/components/FAQ'
 import { CTABanner } from '@/components/CTABanner'
+import { SocialProof } from '@/components/SocialProof'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <Pricing />
+        <SocialProof />
         <FAQ />
         <CTABanner />
       </main>
