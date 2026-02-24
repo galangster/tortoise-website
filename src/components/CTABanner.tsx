@@ -33,7 +33,7 @@ export function CTABanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Ready to Become a Runner?
+Ready to Lock In Race Day?
         </motion.h2>
 
         <motion.p
@@ -43,8 +43,7 @@ export function CTABanner() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          Join 10,000+ people who discovered they could run a marathon. 
-          Start your journey today.
+Join runners using race-day-first planning to train smarter, stay consistent, and actually enjoy the process.
         </motion.p>
 
         <motion.div

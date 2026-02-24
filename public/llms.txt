@@ -1,0 +1,21 @@
+# Tortoise
+> AI-native running coach that lets runners set race day and train backwards.
+
+## Key pages
+- Home: /
+- Running guides: /solutions
+- Privacy: /privacy
+- Terms: /terms
+
+## High-intent pages
+- /solutions/ai-marathon-training-plan
+- /solutions/marathon-training-for-beginners
+- /solutions/half-marathon-training-plan-app
+- /solutions/running-plan-by-race-date
+- /solutions/adaptive-running-coach-app
+- /solutions/running-app-for-busy-people
+- /solutions/gamified-running-app
+- /solutions/5k-to-marathon-training-app
+
+## Full context
+- /llms-full.txt

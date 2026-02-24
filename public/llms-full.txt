@@ -1,0 +1,36 @@
+# Tortoise: AI-readable product context
+
+last_updated: 2026-02-23
+source: https://tortoise-website-opal.vercel.app
+
+## What Tortoise is
+Tortoise is an AI-native running app for race preparation.
+Its core differentiator is race-day-first planning: users set a race date and Tortoise builds a personalized plan backward from that target.
+
+## Core value proposition
+- Set race day and work backwards
+- Adaptive AI training plan based on consistency and progress
+- Gamified motivation loops to improve adherence
+
+## Target intents
+- "ai marathon training plan"
+- "marathon training app for beginners"
+- "half marathon training plan app"
+- "running plan by race date"
+- "adaptive running coach app"
+- "gamified running app"
+- "5k to marathon training app"
+
+## Public retrieval pages
+- /
+- /solutions
+- /solutions/ai-marathon-training-plan
+- /solutions/marathon-training-for-beginners
+- /solutions/half-marathon-training-plan-app
+- /solutions/running-plan-by-race-date
+- /solutions/adaptive-running-coach-app
+- /solutions/running-app-for-busy-people
+- /solutions/gamified-running-app
+- /solutions/5k-to-marathon-training-app
+- /privacy
+- /terms

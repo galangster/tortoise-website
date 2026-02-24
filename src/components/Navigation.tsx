@@ -38,7 +38,7 @@ export function Navigation() {
               </Link>
             ))}
             <button className="btn-primary py-3">
-              Get Started
+              Set Race Day
             </button>
           </div>
 
@@ -77,7 +77,7 @@ export function Navigation() {
                 </Link>
               ))}
               <button className="w-full btn-primary py-3 mt-4">
-                Get Started
+                Set Race Day
               </button>
             </div>
           </motion.div>
