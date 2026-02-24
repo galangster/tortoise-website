@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Tortoise',
   description:
     'AI-native marathon training app that lets runners set race day and builds a personalized plan backwards from that goal.',
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://tortoise.run',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://tortoise-website-opal.vercel.app',
 }
 
 export type SolutionPage = {

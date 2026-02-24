@@ -1,7 +1,7 @@
 # Tortoise: AI-readable product context
 
 last_updated: 2026-02-23
-source: https://tortoise.run
+source: https://tortoise-website-opal.vercel.app
 
 ## What Tortoise is
 Tortoise is an AI-native running app for race preparation.
