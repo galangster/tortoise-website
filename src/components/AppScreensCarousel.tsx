@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Flame, Trophy, CalendarDays } from 'lucide-react'
+import Image from 'next/image'
 
 const slides = [
   {
@@ -10,23 +11,27 @@ const slides = [
     subtitle: 'Today: Easy 4 mile recovery run',
     accent: 'bg-tortoise-primary',
     icon: Flame,
+    image: '/screenshots/quest.svg',
   },
   {
     title: 'Weekly Plan',
     subtitle: 'Auto-adjusted for your schedule',
     accent: 'bg-tortoise-sky',
     icon: CalendarDays,
+    image: '/screenshots/plan.svg',
   },
   {
     title: 'Milestone Unlocked',
     subtitle: 'Longest run completed 🎉',
     accent: 'bg-tortoise-shell',
     icon: Trophy,
+    image: '/screenshots/milestone.svg',
   },
 ]
 
 export function AppScreensCarousel() {
   const [index, setIndex] = useState(0)
+  const [broken, setBroken] = useState<Record<number, boolean>>({})
   const slide = slides[index]
 
   const next = () => setIndex((prev) => (prev + 1) % slides.length)
@@ -37,12 +42,12 @@ export function AppScreensCarousel() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-3">Inside the Tortoise App</h2>
-          <p className="text-xl text-gray-600">Designed to feel like a game, built to deliver race results.</p>
+          <p className="text-xl text-gray-600">Drop real app screenshots into <code>public/screenshots</code> to replace placeholders.</p>
         </div>
 
         <div className="max-w-xl mx-auto">
           <div className="relative rounded-[2.5rem] border-8 border-gray-900 bg-black p-4 shadow-2xl">
-            <div className="rounded-[2rem] bg-white min-h-[440px] p-5 overflow-hidden relative">
+            <div className="rounded-[2rem] bg-white min-h-[520px] p-5 overflow-hidden relative">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={slide.title}
@@ -55,13 +60,26 @@ export function AppScreensCarousel() {
                     <slide.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-black text-gray-900 mb-1">{slide.title}</h3>
-                  <p className="text-gray-600 mb-6">{slide.subtitle}</p>
+                  <p className="text-gray-600 mb-5">{slide.subtitle}</p>
 
-                  <div className="space-y-3">
-                    <div className="h-16 rounded-2xl bg-gray-100 border border-gray-200" />
-                    <div className="h-16 rounded-2xl bg-gray-100 border border-gray-200" />
-                    <div className="h-16 rounded-2xl bg-gray-100 border border-gray-200" />
-                  </div>
+                  {!broken[index] ? (
+                    <div className="relative w-full h-[360px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
+                      <Image
+                        src={slide.image}
+                        alt={slide.title}
+                        fill
+                        className="object-cover"
+                        onError={() => setBroken((prev) => ({ ...prev, [index]: true }))}
+                      />
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      <div className="h-20 rounded-2xl bg-gray-100 border border-gray-200" />
+                      <div className="h-20 rounded-2xl bg-gray-100 border border-gray-200" />
+                      <div className="h-20 rounded-2xl bg-gray-100 border border-gray-200" />
+                      <div className="h-20 rounded-2xl bg-gray-100 border border-gray-200" />
+                    </div>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>
