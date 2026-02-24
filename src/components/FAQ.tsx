@@ -34,8 +34,8 @@ const faqs = [
     answer: 'Celebrate! You will get a personalized race recap, achievements, and the option to set a new goal. Many users tackle 50Ks after their first marathon, or they become mentors in our community, helping new runners start their journey.',
   },
   {
-    question: 'How do I cancel my subscription?',
-    answer: 'Easy — cancel anytime from your Account settings or through the App Store. Your access continues until the end of your billing period. No hoops to jump through, no guilt trips. We believe in earning your business every month.',
+    question: 'How much does Tortoise cost?',
+    answer: 'Tortoise has a free tier, plus Tortoise Pro at $7.99/month or $49.99/year. You can cancel anytime from account settings or your app store subscription screen.',
   },
 ]
 

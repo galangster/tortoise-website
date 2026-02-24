@@ -36,7 +36,7 @@ export function Hero() {
             >
               <div className="inline-flex items-center gap-2 bg-tortoise-primary/10 text-tortoise-primary-dark px-4 py-2 rounded-full font-bold text-sm mb-6">
                 <Star className="w-4 h-4 fill-tortoise-xp text-tortoise-xp" />
-                Super Personalized Marathon Training
+                Set race day. We build backwards.
               </div>
             </motion.div>
 
@@ -46,9 +46,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Run Your First<br />
+              Train For Race Day<br />
               <span className="gradient-text">
-                <TextScramble text="Marathon" duration={1500} />
+                <TextScramble text="The Smart Way" duration={1500} />
               </span>
             </motion.h1>
 
@@ -58,8 +58,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Marathon training that is <strong className="text-tortoise-primary">super personalized for you</strong>, 
-              fun, and meant to be done with other people. Train with friends and reach your goals together.
+              Pick your race date and Tortoise builds a <strong className="text-tortoise-primary">personalized plan backwards</strong> from that finish line. Adaptive, social, and actually fun.
             </motion.p>
 
             <motion.div
@@ -71,13 +70,13 @@ export function Hero() {
               <MagneticButton strength={0.2}>
                 <button className="btn-primary text-lg flex items-center justify-center gap-2">
                   <Play className="w-5 h-5" />
-                  Start Running
+Set Race Day
                 </button>
               </MagneticButton>
               
               <MagneticButton strength={0.2}>
                 <button className="btn-secondary text-lg">
-                  See How It Works
+See Your Plan
                 </button>
               </MagneticButton>
             </motion.div>

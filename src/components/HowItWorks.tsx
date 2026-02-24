@@ -6,26 +6,26 @@ import { TortoiseBubble } from './TortoiseMascot'
 const steps = [
   {
     step: '01',
-    title: 'Set Your Goal',
-    description: 'Tell us your experience level and target race. First 5K? Half marathon? Full marathon? We have got you.',
+    title: 'Set Race Day',
+    description: 'Choose your event date and goal (5K, half, or marathon). That date becomes your north star.',
     mascot: 'thinking' as const,
   },
   {
     step: '02',
-    title: 'Get Your Plan',
-    description: 'Our AI creates a personalized training plan that adapts to your life, not the other way around.',
+    title: 'Plan Backwards',
+    description: 'Tortoise builds a week-by-week plan backwards from race day based on your current fitness.',
     mascot: 'happy' as const,
   },
   {
     step: '03',
-    title: 'Run & Learn',
-    description: 'Complete workouts, unlock achievements, and learn running skills. Every day counts.',
+    title: 'Train, Adapt, Repeat',
+    description: 'Miss a workout or crush a session? The AI updates your plan so progress never stalls.',
     mascot: 'running' as const,
   },
   {
     step: '04',
-    title: 'Train Together',
-    description: 'Run with friends and celebrate milestones together. Slow and steady wins the race.',
+    title: 'Celebrate the Finish',
+    description: 'Stay consistent with streaks, friends, and milestones—then show up ready on race day.',
     mascot: 'celebrating' as const,
   },
 ]
@@ -51,7 +51,7 @@ export function HowItWorks() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            From your first step to the finish line, we are with you every mile.
+From race date selection to finish-line confidence, every step has a purpose.
           </motion.p>
         </div>
 
