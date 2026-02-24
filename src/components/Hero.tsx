@@ -1,8 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { TortoiseMascot, TortoiseBubble } from './TortoiseMascot'
+import { TortoiseMascot } from './TortoiseMascot'
 import { Play, Trophy, Flame, Star } from 'lucide-react'
+import { AuroraBackground } from './AuroraBackground'
+import { TextScramble } from './TextScramble'
+import { MagneticButton } from './MagneticButton'
 
 export function Hero() {
   return (
