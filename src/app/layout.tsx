@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/app-icon.jpg',
+    shortcut: '/app-icon.jpg',
+    apple: '/app-icon.jpg',
+  },
   openGraph: {
     title: 'Tortoise - Marathon Training That Feels Like a Game',
     description:

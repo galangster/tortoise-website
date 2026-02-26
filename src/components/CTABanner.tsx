@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { TortoiseMascot } from './TortoiseMascot'
 import { Apple } from 'lucide-react'
+import Image from 'next/image'
 
 export function CTABanner() {
   return (
@@ -23,8 +23,32 @@ export function CTABanner() {
       />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex justify-center mb-8">
-          <TortoiseMascot mood="celebrating" size={180} />
+        <div className="flex justify-center mb-8 relative">
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Image
+              src="/tortoise-celebrating.png"
+              alt="Celebrating tortoise"
+              width={180}
+              height={180}
+              className="drop-shadow-2xl"
+            />
+          </motion.div>
+          <motion.div
+            className="hidden md:block absolute -right-16 bottom-0"
+            animate={{ x: [0, 8, 0], y: [0, -6, 0] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Image
+              src="/tortoise-running.png"
+              alt="Running tortoise"
+              width={110}
+              height={110}
+              className="drop-shadow-xl"
+            />
+          </motion.div>
         </div>
 
         <motion.h2
