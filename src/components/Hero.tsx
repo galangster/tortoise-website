@@ -5,7 +5,7 @@ import { Play, CalendarDays, Flag, Sparkles, Flame, Trophy } from 'lucide-react'
 import { AuroraBackground } from './AuroraBackground'
 import { TextScramble } from './TextScramble'
 import { MagneticButton } from './MagneticButton'
-import { TortoiseMascot } from './TortoiseMascot'
+import Image from 'next/image'
 
 const milestones = [
   { week: 'Wk 1', label: 'Base Build', icon: CalendarDays },
@@ -100,13 +100,38 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, type: 'spring' }}
           >
+            <motion.div
+              className="absolute -top-12 -right-8 hidden lg:block"
+              animate={{ y: [0, -10, 0], rotate: [0, 1.5, 0] }}
+              transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <Image
+                src="/tortoise-running-140.webp"
+                alt="Running tortoise mascot"
+                width={140}
+                height={140}
+                className="drop-shadow-2xl"
+              />
+            </motion.div>
+
             <div className="rounded-3xl border-2 border-gray-100 bg-white/95 shadow-2xl p-6 lg:p-7">
               <div className="flex items-center justify-between mb-5">
                 <div>
                   <p className="text-xs uppercase tracking-wide text-gray-500 font-bold">Mission Board</p>
                   <h3 className="text-2xl font-black text-gray-900">Seattle Marathon</h3>
                 </div>
-                <TortoiseMascot mood="celebrating" size={72} />
+                <motion.div
+                  animate={{ y: [0, -8, 0], scale: [1, 1.03, 1] }}
+                  transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <Image
+                    src="/tortoise-celebrating-180.webp"
+                    alt="Celebrating tortoise mascot"
+                    width={92}
+                    height={92}
+                    className="drop-shadow-lg"
+                  />
+                </motion.div>
               </div>
 
               <div className="rounded-2xl bg-gray-50 border border-gray-200 p-4">

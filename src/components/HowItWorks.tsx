@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Flag, CalendarDays, RefreshCw, PartyPopper } from 'lucide-react'
+import Image from 'next/image'
 
 const steps = [
   {
@@ -34,7 +35,20 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative">
+          <motion.div
+            className="hidden lg:block absolute -top-10 right-8"
+            animate={{ x: [0, 10, 0], y: [0, -6, 0] }}
+            transition={{ duration: 2.7, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Image
+              src="/tortoise-running-140.webp"
+              alt="Running tortoise"
+              width={120}
+              height={120}
+              className="drop-shadow-lg"
+            />
+          </motion.div>
           <motion.h2
             className="text-4xl lg:text-5xl font-black text-gray-900 mb-4"
             initial={{ opacity: 0, y: 20 }}

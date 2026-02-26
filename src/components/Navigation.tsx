@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/#features', label: 'Features' },
@@ -20,8 +21,15 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-tortoise-primary rounded-full flex items-center justify-center text-xl shadow-lg shadow-tortoise-primary/30">
-              🐢
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-tortoise-primary/30 border border-tortoise-primary/20">
+              <Image
+                src="/app-icon-64.webp"
+                alt="Tortoise app icon"
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
             <span className="font-black text-2xl text-gray-900">Tortoise</span>
           </Link>
