@@ -13,7 +13,8 @@ const slides = [
       'Every day has one clear mission. No guessing, no decision fatigue—just the next best run for your race timeline.',
     accent: 'bg-tortoise-primary',
     icon: Flame,
-    image: '/screenshots/quest.svg',
+    mascot: '/tortoise-running-220.webp',
+    bgColor: 'from-tortoise-primary/10 to-tortoise-sky/10',
   },
   {
     title: 'Weekly Plan',
@@ -22,7 +23,8 @@ const slides = [
       'Your plan updates when life changes. Missed workouts and busy weeks no longer break your progress.',
     accent: 'bg-tortoise-sky',
     icon: CalendarDays,
-    image: '/screenshots/plan.svg',
+    mascot: '/tortoise-celebrating-220.webp',
+    bgColor: 'from-tortoise-sky/10 to-tortoise-primary/10',
   },
   {
     title: 'Milestone Unlocked',
@@ -31,13 +33,13 @@ const slides = [
       'Small wins stack into race-day confidence. Milestones and XP keep momentum high across the full cycle.',
     accent: 'bg-tortoise-shell',
     icon: Trophy,
-    image: '/screenshots/milestone.svg',
+    mascot: '/tortoise-celebrating-220.webp',
+    bgColor: 'from-tortoise-shell/10 to-tortoise-xp/10',
   },
 ]
 
 export function AppScreensCarousel() {
   const [index, setIndex] = useState(0)
-  const [broken, setBroken] = useState<Record<number, boolean>>({})
   const slide = slides[index]
 
   const next = () => setIndex((prev) => (prev + 1) % slides.length)
@@ -110,35 +112,61 @@ export function AppScreensCarousel() {
               </AnimatePresence>
             </div>
 
-            <div className="relative max-w-[320px] mx-auto">
-              <div className="absolute -inset-8 bg-gradient-to-tr from-tortoise-primary/20 via-tortoise-sky/20 to-transparent blur-3xl rounded-full" />
-
-              <div className="relative rounded-[2.75rem] border-[10px] border-gray-900 bg-black p-3 shadow-[0_25px_70px_rgba(15,23,42,0.35)]">
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-5 rounded-full bg-gray-900" />
-
-                <div className="relative rounded-[2rem] overflow-hidden bg-white aspect-[9/19.5]">
-                  {!broken[index] ? (
+            <div className="relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={slide.title}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className={`relative rounded-3xl bg-gradient-to-br ${slide.bgColor} p-8 lg:p-12 min-h-[400px] flex items-center justify-center overflow-hidden`}
+                >
+                  {/* Decorative circles */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                  
+                  {/* Mascot */}
+                  <motion.div
+                    animate={{ y: [0, -12, 0], rotate: [0, 2, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="relative z-10"
+                  >
                     <Image
-                      src={slide.image}
+                      src={slide.mascot}
                       alt={slide.title}
-                      fill
-                      className="object-cover"
-                      onError={() => setBroken((prev) => ({ ...prev, [index]: true }))}
+                      width={220}
+                      height={220}
+                      className="drop-shadow-2xl"
                     />
-                  ) : (
-                    <div className="p-5">
-                      <div className={`w-12 h-12 rounded-2xl ${slide.accent} mb-4`} />
-                      <div className="h-8 rounded-lg bg-gray-100 mb-2" />
-                      <div className="h-5 rounded-lg bg-gray-100 mb-5 w-2/3" />
-                      <div className="space-y-3">
-                        <div className="h-16 rounded-xl bg-gray-100" />
-                        <div className="h-16 rounded-xl bg-gray-100" />
-                        <div className="h-16 rounded-xl bg-gray-100" />
+                  </motion.div>
+
+                  {/* Floating card elements */}
+                  <motion.div 
+                    className="absolute top-6 left-6 bg-white rounded-2xl px-4 py-3 shadow-lg"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className={`w-8 h-8 rounded-lg ${slide.accent} flex items-center justify-center`}>
+                        <slide.icon className="w-4 h-4 text-white" />
                       </div>
+                      <span className="font-bold text-gray-900 text-sm">{slide.title}</span>
                     </div>
-                  )}
-                </div>
-              </div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="absolute bottom-6 right-6 bg-white rounded-2xl px-4 py-3 shadow-lg"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">✨</span>
+                      <span className="font-bold text-gray-900 text-sm">+120 XP</span>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>
