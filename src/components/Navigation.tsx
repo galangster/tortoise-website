@@ -23,7 +23,7 @@ export function Navigation() {
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-tortoise-primary/30 border border-tortoise-primary/20">
               <Image
-                src="/app-icon.jpg"
+                src="/app-icon-64.webp"
                 alt="Tortoise app icon"
                 width={40}
                 height={40}

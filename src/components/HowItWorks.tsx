@@ -42,7 +42,7 @@ export function HowItWorks() {
             transition={{ duration: 2.7, repeat: Infinity, ease: 'easeInOut' }}
           >
             <Image
-              src="/tortoise-running.png"
+              src="/tortoise-running-140.webp"
               alt="Running tortoise"
               width={120}
               height={120}

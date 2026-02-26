@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: '/app-icon.jpg',
-    shortcut: '/app-icon.jpg',
-    apple: '/app-icon.jpg',
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: 'Tortoise - Marathon Training That Feels Like a Game',

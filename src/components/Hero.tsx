@@ -106,7 +106,7 @@ export function Hero() {
               transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut' }}
             >
               <Image
-                src="/tortoise-running.png"
+                src="/tortoise-running-140.webp"
                 alt="Running tortoise mascot"
                 width={140}
                 height={140}
@@ -125,7 +125,7 @@ export function Hero() {
                   transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <Image
-                    src="/tortoise-celebrating.png"
+                    src="/tortoise-celebrating-180.webp"
                     alt="Celebrating tortoise mascot"
                     width={92}
                     height={92}

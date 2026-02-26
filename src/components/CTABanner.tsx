@@ -29,7 +29,7 @@ export function CTABanner() {
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           >
             <Image
-              src="/tortoise-celebrating.png"
+              src="/tortoise-celebrating-180.webp"
               alt="Celebrating tortoise"
               width={180}
               height={180}
@@ -42,7 +42,7 @@ export function CTABanner() {
             transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
           >
             <Image
-              src="/tortoise-running.png"
+              src="/tortoise-running-110.webp"
               alt="Running tortoise"
               width={110}
               height={110}
