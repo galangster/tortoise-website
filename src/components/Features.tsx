@@ -80,7 +80,7 @@ export function Features() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0 }}
+            transition={{ delay: 0, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-tortoise-sky/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="relative flex flex-col h-full">
@@ -112,7 +112,7 @@ export function Features() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.08 }}
+            transition={{ delay: 0.08, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <div className="flex flex-col h-full">
               <motion.div 
@@ -135,7 +135,7 @@ export function Features() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.16 }}
+            transition={{ delay: 0.16, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <div className="flex items-start gap-4">
               <motion.div 
@@ -159,7 +159,7 @@ export function Features() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.24 }}
+            transition={{ delay: 0.24, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-tortoise-xp/20 to-transparent rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             <div className="relative flex items-start gap-4">
@@ -186,7 +186,7 @@ export function Features() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.32 }}
+            transition={{ delay: 0.32, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <div className="flex items-center gap-4">
               <motion.div 
@@ -208,7 +208,7 @@ export function Features() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.4, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <div className="flex items-center gap-4">
               <motion.div 
