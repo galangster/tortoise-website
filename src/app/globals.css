@@ -2,14 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
-
+/* SF Rounded - Apple's system font for iOS/macOS apps */
+/* On Apple devices, this uses the native SF Rounded system font */
+/* On other devices, falls back to similar rounded fonts */
 :root {
-  --font-rounded: 'Nunito', system-ui, sans-serif;
+  --font-rounded: -apple-system, 'SF Pro Rounded', 'SF Pro Display', 'Helvetica Neue', 'Nunito', system-ui, sans-serif;
 }
 
 body {
   font-family: var(--font-rounded);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animation Timing Scale - Consistent rhythm */
+:root {
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-dramatic: 800ms;
+  
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-anticipate: cubic-bezier(0.36, 0, 0.66, -0.56);
+}
+
+/* Shimmer Animation for Loading States */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+  background-size: 200% 100%;
 }
 
 @layer components {

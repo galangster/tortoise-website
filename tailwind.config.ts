@@ -39,7 +39,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        rounded: ['Nunito', 'system-ui', 'sans-serif'],
+        rounded: ['-apple-system', 'SF Pro Rounded', 'SF Pro Display', 'Helvetica Neue', 'Nunito', 'system-ui', 'sans-serif'],
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',
