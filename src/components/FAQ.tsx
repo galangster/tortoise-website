@@ -1,114 +1,60 @@
-'use client'
-
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Plus, Minus } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
+import { Reveal } from './Reveal'
 
 const faqs = [
   {
-    question: 'Is Tortoise good for complete beginners?',
-    answer: 'Absolutely! Tortoise is specifically designed for beginners. Our training programs start with walk/run intervals and gradually build your fitness. The AI adapts to your pace, not the other way around. 73% of our users started as complete beginners.',
+    q: 'When does Tortoise launch?',
+    a: 'Spring 2026. Everyone on the waitlist gets first access through TestFlight, and the first 100 to join get Tortoise Pro free for a month.',
   },
   {
-    question: 'How is this different from other running apps?',
-    answer: 'Three key differences: (1) We keep you engaged every day, not just run days, with knowledge lessons and stretching. (2) Beginners compete fairly with other beginners based on effort, not speed. (3) Our AI actually adapts your plan when life happens — missed a day? We adjust instead of making you feel behind.',
+    q: 'Do I need to already be a runner?',
+    a: 'Tortoise is built for first-timers and the back of the pack. If you can walk, you can start, and the plan meets you where you are and grows with you.',
   },
   {
-    question: 'What if I miss a workout?',
-    answer: 'No guilt, no problem. Our AI automatically adjusts your plan. Take a rest day, and you will find a short knowledge lesson or stretching routine to keep your streak alive. Take a week off, and we will ease you back in safely. The tortoise philosophy is consistency over perfection.',
+    q: 'Is there really a free plan?',
+    a: 'Yes. The free plan gives you a personalized starter plan, run tracking, streaks, and the Bronze league, free forever. Pro unlocks the full AI coaching, all league tiers, and the complete knowledge library.',
   },
   {
-    question: 'Do I need an Apple Watch?',
-    answer: 'Not required, but recommended. The Apple Watch app provides the best experience with real-time heart rate, GPS tracking, and haptic cues. Without a watch, you can still use the app for planning, learning, and logging runs manually.',
+    q: 'How does effort-fair scoring work?',
+    a: 'Most apps rank you by raw pace, which quietly punishes slower runners. Tortoise scores how hard the run was for you, so a tough 12-minute mile earns nearly the same as a fast 7-minute one. Effort is the score, so raw speed alone won’t decide your rank.',
   },
   {
-    question: 'How does the AI adaptation work?',
-    answer: 'We combine your HealthKit data (heart rate, sleep, HRV) with your workout history to detect fatigue, fitness gains, and life stress. The AI then adjusts your daily workout — easier if you are tired, harder if you are crushing it, different if you have a busy week ahead.',
+    q: 'Does it work with Apple Watch?',
+    a: 'Yes. There’s a native Apple Watch app with Live Activities, so you can start runs and see your coaching right from your wrist.',
   },
   {
-    question: 'Can I use this for non-marathon goals?',
-    answer: 'Yes! While we specialize in marathon training, you can set goals for 5K, 10K, or half marathon. Many users start with a 5K goal and naturally progress to longer distances as their confidence builds.',
-  },
-  {
-    question: 'What happens after I finish my race?',
-    answer: 'Celebrate! You will get a personalized race recap, achievements, and the option to set a new goal. Many users tackle 50Ks after their first marathon, or they become mentors in our community, helping new runners start their journey.',
-  },
-  {
-    question: 'How much does Tortoise cost?',
-    answer: 'Tortoise has a free tier, plus Tortoise Pro at $7.99/month or $49.99/year. You can cancel anytime from account settings or your app store subscription screen.',
+    q: 'Is it on Android?',
+    a: 'iOS first. Android is on the roadmap, so join the waitlist and we’ll let you know the moment it’s ready.',
   },
 ]
 
-function FAQItem({ question, answer, isOpen, onClick }: {
-  question: string
-  answer: string
-  isOpen: boolean
-  onClick: () => void
-}) {
-  return (
-    <div className="border-b border-gray-200 last:border-0">
-      <button
-        className="w-full py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors px-2 -mx-2 rounded-lg"
-        onClick={onClick}
-      >
-        <span className="text-lg font-bold text-gray-900 pr-4">{question}</span>
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
-          isOpen ? 'bg-tortoise-primary text-white' : 'bg-gray-100 text-gray-600'
-        }`}>
-          {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-        </div>
-      </button>
-      
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 text-gray-600 text-lg">{answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  )
-}
-
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
-
   return (
-    <section className="py-20 bg-surface-light">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <motion.h2
-            className="text-4xl lg:text-5xl font-black text-gray-900 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Questions? We've Got Answers.
-          </motion.h2>
-        </div>
+    <section id="faq" className="bg-ink-900 py-20 lg:py-28">
+      <div className="mx-auto max-w-3xl px-5">
+        <Reveal className="text-center">
+          <p className="font-extrabold text-tortoise-primary">FAQ</p>
+          <h2 className="mt-2 text-balance text-3xl font-black tracking-tight text-cloud sm:text-4xl">
+            The questions runners actually ask.
+          </h2>
+        </Reveal>
 
-        <motion.div
-          className="bg-white rounded-3xl p-8 shadow-lg"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          {faqs.map((faq, index) => (
-            <FAQItem
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openIndex === index}
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            />
+        <div className="mt-10 space-y-3">
+          {faqs.map((f, i) => (
+            <Reveal key={f.q} delay={i * 0.03}>
+              <details className="group surface overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-extrabold text-cloud">
+                  {f.q}
+                  <ChevronDown
+                    className="h-5 w-5 shrink-0 text-cloud-faint transition-transform duration-200 group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </summary>
+                <p className="px-5 pb-5 font-medium leading-relaxed text-cloud-muted">{f.a}</p>
+              </details>
+            </Reveal>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

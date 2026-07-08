@@ -1,92 +1,58 @@
-'use client'
+import { TortoiseMascot, type Mood } from './TortoiseMascot'
+import { Reveal } from './Reveal'
 
-import { motion } from 'framer-motion'
-import { Flag, CalendarDays, RefreshCw, PartyPopper } from 'lucide-react'
-import Image from 'next/image'
-
-const steps = [
+const steps: { n: number; mood: Mood; title: string; body: string }[] = [
   {
-    step: '01',
-    title: 'Pick Your Race',
-    description: 'Choose your target race and date. This anchors your full training timeline.',
-    icon: Flag,
+    n: 1,
+    mood: 'thinking',
+    title: 'Tell us your goal',
+    body: 'Your race date and where you are today, whether you are a first-timer or coming back. No fitness test required.',
   },
   {
-    step: '02',
-    title: 'Plan Builds Backwards',
-    description: 'Tortoise maps the exact progression from today to race day.',
-    icon: CalendarDays,
+    n: 2,
+    mood: 'analyzing',
+    title: 'Get your adaptive plan',
+    body: 'A week-by-week path to the start line, built around the days you can actually run.',
   },
   {
-    step: '03',
-    title: 'AI Adapts Daily',
-    description: 'Busy week? Missed run? Great session? The plan adjusts without losing momentum.',
-    icon: RefreshCw,
+    n: 3,
+    mood: 'running',
+    title: 'Run today’s session',
+    body: 'Open the app and go. Live coaching guides your pace on your phone and Apple Watch.',
   },
   {
-    step: '04',
-    title: 'Show Up Ready',
-    description: 'Hit race day with confidence from consistent, structured prep.',
-    icon: PartyPopper,
+    n: 4,
+    mood: 'trophy',
+    title: 'Keep the streak, climb',
+    body: 'Small wins compound. Hold your streak, earn XP, and rise through the weekly leagues to race day.',
   },
 ]
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 relative">
-          <motion.div
-            className="hidden lg:block absolute -top-10 right-8"
-            animate={{ x: [0, 10, 0], y: [0, -6, 0] }}
-            transition={{ duration: 2.7, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <Image
-              src="/tortoise-running-140.webp"
-              alt="Running tortoise"
-              width={120}
-              height={120}
-              className="drop-shadow-lg"
-            />
-          </motion.div>
-          <motion.h2
-            className="text-4xl lg:text-5xl font-black text-gray-900 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Your Race-Day Workflow
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            Not generic plans. A clean sequence from target date to finish-line execution.
-          </motion.p>
-        </div>
+    <section id="how" className="bg-ink-850 py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5">
+        <Reveal>
+          <p className="font-extrabold text-tortoise-primary">How it works</p>
+          <h2 className="mt-2 max-w-2xl text-balance text-3xl font-black tracking-tight text-cloud sm:text-4xl">
+            From “I could never” to the start line.
+          </h2>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {steps.map((item, idx) => (
-            <motion.div
-              key={item.step}
-              className="rounded-2xl border border-gray-200 bg-gray-50 p-5"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.08 }}
-            >
-              <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center mb-4">
-                <item.icon className="w-5 h-5 text-tortoise-primary" />
+        <ol className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <Reveal as="li" key={s.n} delay={i * 0.06} className="surface relative flex flex-col p-6">
+              <div className="flex items-center justify-between">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-tortoise-primary/15 text-base font-black text-tortoise-primary">
+                  {s.n}
+                </span>
+                <TortoiseMascot mood={s.mood} size={64} />
               </div>
-              <p className="text-xs font-black text-gray-400 mb-1">STEP {item.step}</p>
-              <h3 className="font-black text-xl text-gray-900 mb-2">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
-            </motion.div>
+              <h3 className="mt-4 text-xl font-black text-cloud">{s.title}</h3>
+              <p className="mt-2 font-medium text-cloud-muted">{s.body}</p>
+            </Reveal>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   )

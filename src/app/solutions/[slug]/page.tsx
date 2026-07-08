@@ -60,16 +60,16 @@ export default function SolutionDetailPage({ params }: Props) {
   }
 
   return (
-    <main className="min-h-screen bg-white py-16">
+    <main className="min-h-screen bg-ink-900 py-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-sm uppercase tracking-wide text-tortoise-primary font-bold mb-3">Tortoise Guides</p>
-        <h1 className="text-4xl font-black text-card-dark mb-5">{page.h1}</h1>
-        <p className="text-lg text-gray-600 mb-8">{page.intro}</p>
+        <h1 className="text-4xl font-black text-cloud mb-5">{page.h1}</h1>
+        <p className="text-lg text-cloud-muted mb-8">{page.intro}</p>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-card-dark mb-4">Why runners choose Tortoise</h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+          <h2 className="text-2xl font-bold text-cloud mb-4">Why runners choose Tortoise</h2>
+          <ul className="list-disc pl-5 space-y-2 text-cloud-muted">
             {page.bullets.map((bullet) => (
               <li key={bullet}>{bullet}</li>
             ))}
@@ -77,48 +77,48 @@ export default function SolutionDetailPage({ params }: Props) {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-card-dark mb-4">Frequently asked questions</h2>
+          <h2 className="text-2xl font-bold text-cloud mb-4">Frequently asked questions</h2>
           <div className="space-y-4">
             {expandedFaqs.map((faq) => (
-              <div key={faq.question} className="rounded-xl border border-gray-200 p-4">
-                <h3 className="font-semibold text-card-dark mb-1">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={faq.question} className="rounded-xl border border-white/10 p-4">
+                <h3 className="font-semibold text-cloud mb-1">{faq.question}</h3>
+                <p className="text-cloud-muted">{faq.answer}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-card-dark mb-4">Related running guides</h2>
+          <h2 className="text-2xl font-bold text-cloud mb-4">Related running guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {related.map((item) => (
               <Link
                 key={item.slug}
                 href={`/solutions/${item.slug}`}
-                className="rounded-xl border border-gray-200 p-4 hover:border-tortoise-primary/60 transition-colors"
+                className="rounded-xl border border-white/10 p-4 hover:border-tortoise-primary/60 transition-colors"
               >
-                <h3 className="font-semibold text-card-dark mb-1">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
+                <h3 className="font-semibold text-cloud mb-1">{item.title}</h3>
+                <p className="text-sm text-cloud-muted">{item.description}</p>
               </Link>
             ))}
           </div>
         </section>
 
-        <div className="rounded-2xl border border-gray-200 p-6 bg-gray-50">
-          <h2 className="text-2xl font-bold text-card-dark mb-2">Train smarter for race day</h2>
-          <p className="text-gray-600 mb-4">
+        <div className="rounded-2xl border border-white/10 p-6 bg-ink-800">
+          <h2 className="text-2xl font-bold text-cloud mb-2">Train smarter for race day</h2>
+          <p className="text-cloud-muted mb-4">
             Set your race date, train with an adaptive AI plan, and stay consistent with Tortoise.
           </p>
           <a
             href="#pricing"
-            className="inline-block rounded-full bg-tortoise-primary text-card-dark font-bold px-5 py-3"
+            className="inline-block rounded-full bg-tortoise-primary text-cloud font-bold px-5 py-3"
           >
             Start with Tortoise
           </a>
         </div>
 
         <p className="mt-8">
-          <Link href="/solutions" className="text-sm text-gray-500 hover:text-card-dark">
+          <Link href="/solutions" className="text-sm text-cloud-faint hover:text-cloud">
             ← Back to all guides
           </Link>
         </p>

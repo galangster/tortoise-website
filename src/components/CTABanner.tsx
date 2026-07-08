@@ -1,94 +1,28 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { Apple } from 'lucide-react'
-import Image from 'next/image'
+import { WaitlistForm } from './WaitlistForm'
+import { TortoiseMascot } from './TortoiseMascot'
+import { Reveal } from './Reveal'
 
 export function CTABanner() {
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-tortoise-primary via-tortoise-primary to-tortoise-shell" />
-      
-      {/* Decorative elements */}
-      <motion.div
-        className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-10 right-10 w-48 h-48 bg-white/10 rounded-full blur-3xl"
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 5, repeat: Infinity }}
-      />
-
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex justify-center mb-8 relative">
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <Image
-              src="/tortoise-celebrating-180.webp"
-              alt="Celebrating tortoise"
-              width={180}
-              height={180}
-              className="drop-shadow-2xl"
-            />
-          </motion.div>
-          <motion.div
-            className="hidden md:block absolute -right-16 bottom-0"
-            animate={{ x: [0, 8, 0], y: [0, -6, 0] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <Image
-              src="/tortoise-running-110.webp"
-              alt="Running tortoise"
-              width={110}
-              height={110}
-              className="drop-shadow-xl"
-            />
-          </motion.div>
-        </div>
-
-        <motion.h2
-          className="text-4xl lg:text-6xl font-black text-white mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-Ready to Lock In Race Day?
-        </motion.h2>
-
-        <motion.p
-          className="text-xl text-white/90 mb-10 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-Join runners using race-day-first planning to train smarter, stay consistent, and actually enjoy the process.
-        </motion.p>
-
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          <button className="bg-white text-gray-900 font-bold py-4 px-8 rounded-2xl flex items-center gap-3 hover:bg-gray-100 transition-colors shadow-xl">
-            <Apple className="w-6 h-6" />
-            <div className="text-left">
-              <div className="text-xs opacity-70">Download on the</div>
-              <div className="text-lg leading-none">App Store</div>
-            </div>
-          </button>
-        </motion.div>
-
-        <p className="text-white/70 mt-6 text-sm">
-          Free to download. Premium features available. iOS only.
-        </p>
+    <section className="dawn-sky border-y border-white/10 py-20 lg:py-28">
+      <div className="mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
+        <Reveal>
+          <TortoiseMascot mood="finishline" size={168} float alt="The Tortoise mascot crossing a finish line" />
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h2 className="mt-4 text-balance text-3xl font-black tracking-tight text-cloud sm:text-4xl lg:text-5xl">
+            Your first marathon starts with your name on the list.
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="mt-4 max-w-lg text-pretty text-lg font-medium text-cloud-muted">
+            Join the waitlist for early access when we launch in Spring 2026. The first 100 runners get
+            Pro free for a month.
+          </p>
+        </Reveal>
+        <Reveal delay={0.15} className="mt-8 flex w-full justify-center">
+          <WaitlistForm />
+        </Reveal>
       </div>
     </section>
   )
