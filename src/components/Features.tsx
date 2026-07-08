@@ -1,230 +1,107 @@
-'use client'
+import { Brain, Flame, GraduationCap } from 'lucide-react'
+import { EffortScoreCard, LeaguePodium } from './AppUI'
+import { TortoiseMascot, type Mood } from './TortoiseMascot'
+import { Reveal } from './Reveal'
 
-import { motion } from 'framer-motion'
-import { Target, Zap, Users, Brain, Trophy, CalendarClock } from 'lucide-react'
-
-const features = [
-  {
-    icon: CalendarClock,
-    title: 'Race-Day-First Planning',
-    description: 'Set your race date first. Every workout is sequenced backwards from that finish line.',
-    color: 'bg-tortoise-sky',
-    size: 'large', // Featured card
-  },
+const tiles: { icon: typeof Brain; mood: Mood; accent: string; title: string; body: string }[] = [
   {
     icon: Brain,
-    title: 'Adaptive AI Coach',
-    description: 'Plans update when you miss sessions, feel stronger, or hit a stressful week.',
-    color: 'bg-tortoise-primary',
-    size: 'medium',
+    mood: 'analyzing',
+    accent: 'text-tortoise-sky',
+    title: 'A plan that adapts to your life',
+    body: 'Miss a day, sleep badly, or feel strong, and Tortoise reshapes the week so the plan fits you, instead of the other way around.',
   },
   {
-    icon: Target,
-    title: 'Daily Quest Structure',
-    description: 'Every day has a clear mission so you always know exactly what to do next.',
-    color: 'bg-tortoise-shell',
-    size: 'medium',
+    icon: Flame,
+    mood: 'flame',
+    accent: 'text-tortoise-streak',
+    title: 'Streaks without the guilt',
+    body: 'Earn XP and keep a streak that rewards showing up. Rest days count, and a missed run is a nudge, never a red mark.',
   },
   {
-    icon: Zap,
-    title: 'Streak + XP Motivation',
-    description: 'Gamified momentum loops help you stay consistent without burnout.',
-    color: 'bg-tortoise-purple',
-    size: 'compact', // Smaller card
+    icon: GraduationCap,
+    mood: 'teaching',
+    accent: 'text-tortoise-xp',
+    title: 'Learn as you train',
+    body: 'Bite-sized lessons on pacing, form, fueling and recovery, so by race day you understand the why behind every run.',
   },
-  {
-    icon: Users,
-    title: 'Train with Friends',
-    description: 'Social features keep you accountable and make race prep feel less lonely.',
-    color: 'bg-tortoise-trail',
-    size: 'compact',
-  },
-  {
-    icon: Trophy,
-    title: 'Performance Milestones',
-    description: 'Visual progress from base build to peak week to race-day readiness.',
-    color: 'bg-tortoise-xp',
-    size: 'large', // Featured card
-  },
+]
+
+const extras = [
+  'Live in-run coaching',
+  'Apple Watch app',
+  'Live Activities',
+  'Ghost-runner races',
+  'Route challenges',
+  'Rest-day recovery tips',
 ]
 
 export function Features() {
   return (
-    <section id="features" className="py-20 bg-surface-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <motion.h2
-            className="text-4xl lg:text-5xl font-black text-gray-900 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Built to Keep You Consistent
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            Serious training outcomes, playful UX, and a coaching system that adapts to real life.
-          </motion.p>
-        </div>
+    <section id="features" className="bg-ink-900 py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5">
+        <Reveal>
+          <p className="font-extrabold text-tortoise-primary">Why Tortoise</p>
+          <h2 className="mt-2 max-w-2xl text-balance text-3xl font-black tracking-tight text-cloud sm:text-4xl">
+            Everything you need to actually reach the start line.
+          </h2>
+        </Reveal>
 
-        {/* Editorial Layout - Broken Grid */}
-        <div className="grid md:grid-cols-12 gap-6">
-          {/* Row 1: Large featured + Medium */}
-          <motion.div
-            className="md:col-span-7 card-featured group relative overflow-hidden"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-tortoise-sky/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="relative flex flex-col h-full">
-              <div className="flex items-start gap-4 mb-4">
-                <motion.div 
-                  className="bg-tortoise-sky p-4 rounded-2xl shadow-lg"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <CalendarClock className="w-8 h-8 text-white" />
-                </motion.div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-black text-gray-900 mb-3">Race-Day-First Planning</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed">
-                    Set your race date first. Every workout is sequenced backwards from that finish line, 
-                    ensuring you peak at exactly the right moment.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-tortoise-sky">
-                <span>Backwards planning logic</span>
-                <span>→</span>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="md:col-span-5 card group"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.08, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <div className="flex flex-col h-full">
-              <motion.div 
-                className="bg-tortoise-primary p-3 rounded-2xl shadow-lg w-fit mb-4"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Brain className="w-6 h-6 text-white" />
-              </motion.div>
-              <h3 className="text-xl font-black text-gray-900 mb-2">Adaptive AI Coach</h3>
-              <p className="text-gray-600 flex-1">
-                Plans update when you miss sessions, feel stronger, or hit a stressful week.
+        {/* Row 1 — the two differentiators, each shown as real product (open regions,
+            not cards, so the product cards inside them stand on their own) */}
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-6">
+          <Reveal className="flex min-w-0 flex-col justify-between gap-6 lg:col-span-2 lg:flex-row lg:items-center">
+            <div className="max-w-sm">
+              <h3 className="text-2xl font-black text-cloud">Effort-fair scoring</h3>
+              <p className="mt-3 text-pretty font-medium text-cloud-muted">
+                Most apps reward the fastest people. Tortoise scores the effort you put in, so a hard
+                12-minute mile earns nearly as much as a 7-minute one. Beginners compete on heart, not
+                genetics.
               </p>
             </div>
-          </motion.div>
+            <EffortScoreCard className="shrink-0" />
+          </Reveal>
 
-          {/* Row 2: Two mediums */}
-          <motion.div
-            className="md:col-span-6 card group"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.16, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <div className="flex items-start gap-4">
-              <motion.div 
-                className="bg-tortoise-shell p-3 rounded-2xl shadow-lg"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Target className="w-6 h-6 text-white" />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-2">Daily Quest Structure</h3>
-                <p className="text-gray-600">
-                  Every day has a clear mission so you always know exactly what to do next.
-                </p>
-              </div>
+          <Reveal delay={0.05} className="flex min-w-0 flex-col gap-5">
+            <div>
+              <h3 className="text-2xl font-black text-cloud">Weekly leagues</h3>
+              <p className="mt-2 font-medium text-cloud-muted">
+                Get placed with runners at your level. Climb from Bronze to Elite and promote every
+                Sunday.
+              </p>
             </div>
-          </motion.div>
-
-          <motion.div
-            className="md:col-span-6 card-featured-secondary group relative overflow-hidden"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.24, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-tortoise-xp/20 to-transparent rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-            <div className="relative flex items-start gap-4">
-              <motion.div 
-                className="bg-tortoise-xp p-4 rounded-2xl shadow-lg"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Trophy className="w-8 h-8 text-white" />
-              </motion.div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-black text-gray-900 mb-2">Performance Milestones</h3>
-                <p className="text-gray-600 text-lg">
-                  Visual progress from base build to peak week to race-day readiness. 
-                  Watch your fitness unfold week by week.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Row 3: Two compact cards side by side */}
-          <motion.div
-            className="md:col-span-6 card-compact group"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.32, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <div className="flex items-center gap-4">
-              <motion.div 
-                className="bg-tortoise-purple p-3 rounded-xl shadow-lg"
-                whileHover={{ scale: 1.15 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Zap className="w-5 h-5 text-white" />
-              </motion.div>
-              <div>
-                <h3 className="text-lg font-black text-gray-900">Streak + XP Motivation</h3>
-                <p className="text-gray-600 text-sm">Gamified momentum loops without burnout</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="md:col-span-6 card-compact group"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <div className="flex items-center gap-4">
-              <motion.div 
-                className="bg-tortoise-trail p-3 rounded-xl shadow-lg"
-                whileHover={{ scale: 1.15 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Users className="w-5 h-5 text-white" />
-              </motion.div>
-              <div>
-                <h3 className="text-lg font-black text-gray-900">Train with Friends</h3>
-                <p className="text-gray-600 text-sm">Social accountability, less lonely prep</p>
-              </div>
-            </div>
-          </motion.div>
+            <LeaguePodium className="mt-auto" />
+          </Reveal>
         </div>
+
+        {/* Row 2 — three tiles, each with its own mascot mood (deliberately not identical) */}
+        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {tiles.map((t, i) => (
+            <Reveal key={t.title} delay={i * 0.05} className="surface relative min-w-0 overflow-hidden p-6">
+              <TortoiseMascot
+                mood={t.mood}
+                size={96}
+                className="absolute -right-3 -top-2 opacity-90"
+              />
+              <t.icon className={`h-8 w-8 ${t.accent}`} aria-hidden="true" />
+              <h3 className="mt-4 max-w-[70%] text-xl font-black text-cloud">{t.title}</h3>
+              <p className="mt-2 font-medium text-cloud-muted">{t.body}</p>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Row 3 — the rest of the kit, as chips instead of repeated cards */}
+        <Reveal delay={0.05} className="surface mt-4 flex flex-wrap items-center gap-x-3 gap-y-3 p-6">
+          <span className="mr-1 font-black text-cloud">Also in the app:</span>
+          {extras.map((e) => (
+            <span
+              key={e}
+              className="rounded-full bg-ink-800 px-3.5 py-1.5 text-sm font-bold text-cloud-muted ring-1 ring-white/10"
+            >
+              {e}
+            </span>
+          ))}
+        </Reveal>
       </div>
     </section>
   )

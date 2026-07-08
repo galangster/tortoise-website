@@ -12,6 +12,9 @@ module.exports = {
           primary: '#58CC02',
           'primary-dark': '#46A302',
           'primary-light': '#7ED839',
+          // AA-safe fill under white text (5.38:1 on white; matches the app's CTA decision)
+          cta: '#2F7A00',
+          'cta-pressed': '#2C6B00',
           shell: '#FF9600',
           'shell-dark': '#E08600',
           'shell-light': '#FFB040',
@@ -29,48 +32,38 @@ module.exports = {
           'purple-dark': '#A855F7',
           pink: '#FF86D0',
         },
-        surface: {
-          light: '#F7F7F7',
-          dark: '#1C2333',
+        // App's real dark-navy identity (from DesignSystem/Tokens/Primitives.swift)
+        ink: {
+          900: '#0D1117', // near-black hero / page base
+          850: '#131A2B', // signature navy
+          800: '#1A1A2E', // celebration card
+          750: '#1C2333', // sunken
+          700: '#232B3E', // card / raised
+          650: '#2A3347', // elevated
         },
-        card: {
-          light: '#FFFFFF',
-          dark: '#232B3E',
+        // Text on dark
+        cloud: {
+          DEFAULT: '#F2F4F8', // primary text on navy
+          muted: '#AEB6C6',   // secondary
+          faint: '#98A4B8',   // tertiary — AA (>=5:1) on ink-650/700/800 card surfaces
         },
       },
       fontFamily: {
-        rounded: ['-apple-system', 'SF Pro Rounded', 'SF Pro Display', 'Helvetica Neue', 'Nunito', 'system-ui', 'sans-serif'],
+        rounded: ['var(--font-nunito)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-nunito)', 'system-ui', 'sans-serif'],
       },
-      animation: {
-        'bounce-slow': 'bounce 3s infinite',
-        'breathe': 'breathe 2.5s ease-in-out infinite',
-        'float': 'float 3s ease-in-out infinite',
-        'wiggle': 'wiggle 1s ease-in-out infinite',
-        'celebrate': 'celebrate 0.5s ease-out',
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+      boxShadow: {
+        'lift': '0 10px 40px -12px rgba(0,0,0,0.55)',
+        'glow-green': '0 0 40px -8px rgba(88,204,2,0.35)',
       },
       keyframes: {
-        breathe: {
-          '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.06)' },
-        },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5px)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
-        },
-        celebrate: {
-          '0%': { transform: 'scale(0.8)', opacity: '0' },
-          '50%': { transform: 'scale(1.1)' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
-        'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(88, 204, 2, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(88, 204, 2, 0.6)' },
-        },
+      },
+      animation: {
+        float: 'float 4s ease-in-out infinite',
       },
     },
   },

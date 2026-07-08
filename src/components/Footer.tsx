@@ -1,79 +1,33 @@
-'use client'
-
-import Link from 'next/link'
-import { TortoiseMascot } from './TortoiseMascot'
-
-const footerLinks = {
-  product: [
-    { label: 'Features', href: '/#features' },
-    { label: 'How it Works', href: '/#how-it-works' },
-    { label: 'Pricing', href: '/#pricing' },
-    { label: 'Training Guides', href: '/solutions' },
-  ],
-  legal: [
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
-  ],
-}
+import Image from 'next/image'
 
 export function Footer() {
   return (
-    <footer className="bg-card-dark text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-tortoise-primary rounded-full flex items-center justify-center text-2xl shadow-lg">
-                🐢
-              </div>
-              <span className="font-black text-2xl">Tortoise</span>
-            </div>
-            
-            <p className="text-gray-400 mb-6 max-w-sm">
-              Super personalized marathon training that is fun and social. 
-              Train with friends and reach your goals together.
+    <footer className="bg-ink-900 py-14">
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+          <div>
+            <a href="#top" className="flex items-center gap-2.5">
+              <Image src="/app-icon.png" alt="" width={36} height={36} className="rounded-xl" />
+              <span className="text-lg font-extrabold tracking-tight text-cloud">Tortoise</span>
+            </a>
+            <p className="mt-3 max-w-xs font-semibold text-cloud-muted">
+              Marathon coaching for the back of the pack. Slow and steady wins the race.
             </p>
           </div>
 
-          {/* Links */}
-          <div>
-            <h4 className="font-bold text-lg mb-4">Product</h4>
-            <ul className="space-y-2">
-              {footerLinks.product.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-lg mb-4">Legal</h4>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-bold text-cloud-muted">
+            <a href="#how" className="transition-colors hover:text-cloud">How it works</a>
+            <a href="#features" className="transition-colors hover:text-cloud">Features</a>
+            <a href="#pricing" className="transition-colors hover:text-cloud">Pricing</a>
+            <a href="#faq" className="transition-colors hover:text-cloud">FAQ</a>
+            <a href="/privacy" className="transition-colors hover:text-cloud">Privacy</a>
+            <a href="/terms" className="transition-colors hover:text-cloud">Terms</a>
+          </nav>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
-            © 2026 Tortoise. All rights reserved.
-          </p>
-          
-          <div className="flex items-center gap-2 text-gray-400 text-sm">
-            Made with
-            <TortoiseMascot mood="happy" size={32} animate={false} />
-            for runners everywhere
-          </div>
+        <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm font-semibold text-cloud-faint sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Tortoise · The Creative Company</p>
+          <p>Launching Spring 2026 · Made for first-timers</p>
         </div>
       </div>
     </footer>

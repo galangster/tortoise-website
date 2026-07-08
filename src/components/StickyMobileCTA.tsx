@@ -1,14 +1,25 @@
 'use client'
 
-import { Apple } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export function StickyMobileCTA() {
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 640)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <div className="fixed bottom-3 left-3 right-3 z-50 md:hidden">
-      <button className="w-full bg-tortoise-primary text-white rounded-2xl border-b-4 border-tortoise-primary-dark py-3 font-black shadow-xl flex items-center justify-center gap-2">
-        <Apple className="w-5 h-5" />
-        Set Race Day
-      </button>
+    <div
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink-900/90 p-3 backdrop-blur-md transition-transform duration-300 md:hidden ${
+        show ? 'translate-y-0' : 'translate-y-full'
+      }`}
+    >
+      <a href="#waitlist" className="btn-primary w-full">
+        Join the waitlist
+      </a>
     </div>
   )
 }

@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "2M8UE59WH7.app.tortoise-ai-marathon-coach",
+        "paths": ["/i/*", "/invite/*"]
+      }
+    ]
+  }
+}
